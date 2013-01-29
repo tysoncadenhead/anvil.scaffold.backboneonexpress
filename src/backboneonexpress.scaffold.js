@@ -94,33 +94,31 @@ module.exports = function( _, anvil ) {
 
         render: function ( data ) {
 
-            console.log(data);
-
             var template, i, field, type,
-                fields = data.fields.replace(/ /g, '').split(',');
+                fields = data.data.fields.replace(/ /g, '').split(',');
             
-            data.fields = fields;
-            data.schema = {};
-            data.schemaDefaults = {};
-            data.fieldsArray = [];
+            data.data.fields = fields;
+            data.data.schema = {};
+            data.data.schemaDefaults = {};
+            data.data.fieldsArray = [];
             
             for (i = 0; i < fields.length; i++) {
                     
                 field = fields[i].split(':')[0];
                 type = fields[i].split(':')[1];
 
-                data.schema[field] = {
+                data.data.schema[field] = {
                     type: eval(type || 'String')
                 };
 
-                data.fieldsArray.push(field);
+                data.data.fieldsArray.push(field);
 
-                data.schemaDefaults[field] = '';
+                data.data.schemaDefaults[field] = '';
 
             }
 
-            data.schemaStr = JSON.encode(data.schema);
-            data.schemaDefaultsStr = JSON.encode(data.schemaDefaults);
+            data.data.schemaStr = JSON.encode(data.data.schema);
+            data.data.schemaDefaultsStr = JSON.encode(data.data.schemaDefaults);
 
             template = Handlebars.compile( data.template );
 
