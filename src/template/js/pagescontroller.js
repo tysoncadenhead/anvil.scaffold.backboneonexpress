@@ -14,7 +14,7 @@ define([
 
 		home: function (req, res) {
 			this.render('pages/home', {
-				title: ''
+				title: 'Backbone on Express'
 			});
 		}
 

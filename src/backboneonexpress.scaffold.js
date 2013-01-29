@@ -93,6 +93,9 @@ module.exports = function( _, anvil ) {
         }],
 
         render: function ( data ) {
+
+            console.log(data);
+
             var template, i, field, type,
                 fields = data.fields.replace(/ /g, '').split(',');
             
@@ -127,6 +130,7 @@ module.exports = function( _, anvil ) {
         output: {
 
             "{{path}}": {
+                "test/{{name}}s_test.js": anvil.scaffold.file( root + "js/test.js" ),
                 "app": {
                     "controllers/{{name}}s_controller.js": anvil.scaffold.file( root + "js/controller.js" ),
                     "config/routes.js": function (data) {

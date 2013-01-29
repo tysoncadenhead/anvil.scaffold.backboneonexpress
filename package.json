@@ -1,6 +1,6 @@
 {
   "name": "anvil.scaffold.backboneonexpress",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Scaffold for Backbone-On-Express plugins",
   "main": "./src/backboneonexpress.scaffold.js",
   "scripts": {
