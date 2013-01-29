@@ -2,7 +2,7 @@
 /*jslint node: true, plusplus: true, evil: true */
 
 var path = require( "path" ),
-    root = path.resolve( __dirname, "../src/template/" + "/" ),
+    root = path.resolve( __dirname, "../src/template/" ) + "/",
     fs = require( "fs" );
 
 
