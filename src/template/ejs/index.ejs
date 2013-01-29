@@ -1,0 +1,7 @@
+<table class="table table-striped">
+<% _.each({{names}}s, function ({{name}}) { %>
+	<tr>
+		<td><a href="/{{name}}/<%= {{name}}._id %>"><%= {{name}}._id %><a></td>
+	</tr>
+<% }) %>
+</table>

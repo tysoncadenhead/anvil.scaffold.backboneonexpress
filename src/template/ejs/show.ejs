@@ -1,0 +1,10 @@
+<table>
+	{{#fieldsArray}}
+		<tr>
+			<td>{{this}}:</td>
+			<td><%= {{this}} %></td>
+		</tr>
+	{{/fieldsArray}}
+</table>
+<a href="/{{name}}" class="btn">All {{name}}s</a>
+<a href="/{{name}}/edit/<%= _id %>" class="btn btn-primary">Edit <%= _id %></a>

@@ -1,0 +1,27 @@
+{
+  "name": "anvil.scaffold.backboneonexpress",
+  "version": "0.1.3",
+  "description": "Scaffold for Backbone-On-Express plugins",
+  "main": "./src/backboneonexpress.scaffold.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tysoncadenhead/anvil.scaffold.backboneonexpress.git"
+  },
+  "keywords": [
+    "anvil",
+    "backboneonexpress",
+    "backbone",
+    "express",
+    "scaffold"
+  ],
+  "dependencies": {
+    "anvil.js": ">=0.9.0"
+  },
+  "requiredPlugins": [
+      "anvil.scaffold"
+  ],
+  "author": "Tyson Cadenhead",
+  "license": "MIT"
+}
