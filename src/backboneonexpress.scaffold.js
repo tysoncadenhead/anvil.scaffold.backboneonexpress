@@ -3,8 +3,8 @@
 
 var path = require( "path" ),
     root = path.resolve( __dirname, "../src/template/" ) + "/",
-    fs = require( "fs" );
-
+    fs = require( "fs" ),
+    Handlebars = required( "handlebars" );
 
 module.exports = function( _, anvil ) {
 
@@ -117,8 +117,8 @@ module.exports = function( _, anvil ) {
 
             }
 
-            data.data.schemaStr = JSON.encode(data.data.schema);
-            data.data.schemaDefaultsStr = JSON.encode(data.data.schemaDefaults);
+            data.data.schemaStr = JSON.stringify(data.data.schema);
+            data.data.schemaDefaultsStr = JSON.stringify(data.data.schemaDefaults);
 
             template = Handlebars.compile( data.template );
 
