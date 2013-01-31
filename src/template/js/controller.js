@@ -20,7 +20,7 @@ define([
 
 			this.render('{{name}}/new', _.extend({
 				title: 'New {{name}}'
-			}, model));
+			}, model.defaults));
 
 		},
 
@@ -32,7 +32,7 @@ define([
 					});
 
 			model.fetch(function (model, data, err) {
-				self.render('{{name}}/edit', _.extend(model, {
+				self.render('{{name}}/edit', _.extend(data, {
 					title: 'Edit {{name}}'
 				}));
 			});
@@ -70,7 +70,7 @@ define([
 
 			model.fetch(function (model, data, err) {
 				if (data) {
-					self.render('{{name}}/show', _.extend(model, {
+					self.render('{{name}}/show', _.extend(data, {
 						title: 'View {{name}}'
 					}));
 				} else {
@@ -115,7 +115,6 @@ define([
 
 			model.save({
 				success: function (model, data) {
-					req.session['{{name}}'] = data;
 					res.redirect('/{{name}}/' + data._id);
 				},
 				error: function (model, data) {
@@ -143,8 +142,7 @@ define([
 					});
 
 			model.destroy(function (model, data, err) {
-				req.session['{{name}}'] = null;
-				res.redirect('/{{name}}/login');
+				res.redirect('/{{name}}');
 			});
 
 		}

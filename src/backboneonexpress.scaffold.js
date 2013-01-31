@@ -4,7 +4,8 @@
 var path = require( "path" ),
     root = path.resolve( __dirname, "../src/template/" ) + "/",
     fs = require( "fs" ),
-    Handlebars = required( "handlebars" );
+    handlebars = require( "handlebars" );
+
 
 module.exports = function( _, anvil ) {
 
@@ -94,33 +95,13 @@ module.exports = function( _, anvil ) {
 
         render: function ( data ) {
 
-            var template, i, field, type,
-                fields = data.data.fields.replace(/ /g, '').split(',');
-            
-            data.data.fields = fields;
-            data.data.schema = {};
-            data.data.schemaDefaults = {};
-            data.data.fieldsArray = [];
-            
-            for (i = 0; i < fields.length; i++) {
-                    
-                field = fields[i].split(':')[0];
-                type = fields[i].split(':')[1];
+            var template, fields, field, i;
 
-                data.data.schema[field] = {
-                    type: eval(type || 'String')
-                };
-
-                data.data.fieldsArray.push(field);
-
-                data.data.schemaDefaults[field] = '';
-
+            if (typeof data.data.fields === "string") {
+                data.data.fields = data.data.fields.split(',');
             }
 
-            data.data.schemaStr = JSON.stringify(data.data.schema);
-            data.data.schemaDefaultsStr = JSON.stringify(data.data.schemaDefaults);
-
-            template = Handlebars.compile( data.template );
+            template = handlebars.compile( data.template );
 
             return template( data.data );
         },
@@ -130,11 +111,12 @@ module.exports = function( _, anvil ) {
             "{{path}}": {
                 "test/{{name}}s_test.js": anvil.scaffold.file( root + "js/test.js" ),
                 "app": {
-                    "controllers/{{name}}s_controller.js": anvil.scaffold.file( root + "js/controller.js" ),
+                    "controllers/{{name}}s_controller.js": anvil.scaffold.file( root + "js/controller.js" )/*,
                     "config/routes.js": function (data) {
-                        var file = fs.readFileSync( path + "/app/config.routes.js" );
+                        console.log(path.dirname());
+                        var file = fs.readFileSync( path.dirname() + "/app/config.routes.js" );
                         return file.replace("crud: [", "crud: [" + data.name + ",");
-                    }
+                    }*/
                 },
                 "public": {
 

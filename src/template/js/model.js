@@ -1,4 +1,4 @@
-/*global define */
+/*global define, Backbone */
 
 define(function () {
 
@@ -10,9 +10,19 @@ define(function () {
 
 		name: '{{name}}',
 
-		defaults: {{schemaDefaults}},
+		defaults: {
+			{{#fields}}
+				'{{this}}': '',
+			{{/fields}}
+		},
 
-		schema: {{schema}}
+		schema: {
+			{{#fields}}
+				'{{this}}': {
+					type: String
+				},
+			{{/fields}}
+		}
 
 	});
 

@@ -1,10 +1,9 @@
 {
   "name": "anvil.scaffold.backboneonexpress",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "Scaffold for Backbone-On-Express plugins",
   "main": "./src/backboneonexpress.scaffold.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/tysoncadenhead/anvil.scaffold.backboneonexpress.git"
@@ -18,8 +17,17 @@
   ],
   "dependencies": {
     "anvil.js": ">=0.9.0",
-    "handlebars": "1.0.8"
+    "handlebars": "~1.0"
   },
-  "author": "Tyson Cadenhead",
-  "license": "MIT"
+  "author": {
+    "name": "Tyson Cadenhead"
+  },
+  "license": "MIT",
+  "readme": "# anvil.scaffold.backboneonexpress\n\nThis repository hosts [Anvil](https://github.com/anviljs/anvil.js) scaffolds for [Backbone on Express](https://github.com/tysoncadenhead/backbone-on-express) plugin creation.\n\nTo install these scaffolds, run:\n\n```bash\nanvil install anvil.scaffold.backboneonexpress\n```\n\nOnce it is installed, you'll be able to run:\n\n* `anvil gen boe` generates a new Backbone on Express project\n* `anvil gen boe:crud` adds all the crud functionality for a model to the project",
+  "readmeFilename": "README.md",
+  "_id": "anvil.scaffold.backboneonexpress@0.1.9",
+  "dist": {
+    "shasum": "748e2ddb55a4b5e2ed534f749f2a549aaf91134a"
+  },
+  "_from": "anvil.scaffold.backboneonexpress@0.1.9"
 }
