@@ -89,7 +89,7 @@ module.exports = function( _, anvil ) {
             required: true
         }, {
             name: "fields",
-            description: "The fields to be used in the module (ie: firstName: String, phone: Number):",
+            description: "The fields to be used in the module (ie: firstName,phone,email):",
             required: true
         }],
 
@@ -111,12 +111,12 @@ module.exports = function( _, anvil ) {
             "{{path}}": {
                 "test/{{name}}s_test.js": anvil.scaffold.file( root + "js/test.js" ),
                 "app": {
-                    "controllers/{{name}}s_controller.js": anvil.scaffold.file( root + "js/controller.js" )/*,
+                    "controllers/{{name}}s_controller.js": anvil.scaffold.file( root + "js/controller.js" ),
                     "config/routes.js": function (data) {
-                        console.log(path.dirname());
-                        var file = fs.readFileSync( path.dirname() + "/app/config.routes.js" );
-                        return file.replace("crud: [", "crud: [" + data.name + ",");
-                    }*/
+                        var file = fs.readFileSync( anvil.project.root + "/app/config/routes.js", "utf8" ).replace("crud = [];", "crud = []; crud.push('" + data.name + "'); ");
+                        fs.writeFileSync( anvil.project.root + "/app/config/routes.js", file, "utf8" );
+                        return file;
+                    }
                 },
                 "public": {
 

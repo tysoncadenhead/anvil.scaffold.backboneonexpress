@@ -1,6 +1,6 @@
 # anvil.scaffold.backboneonexpress
 
-This repository hosts [Anvil](https://github.com/anviljs/anvil.js) scaffolds for [Backbone on Express](https://github.com/tysoncadenhead/backbone-on-express) plugin creation.
+This repository hosts [Anvil](https://github.com/anviljs/anvil.js) scaffolds for [Backbone on Express](https://github.com/tysoncadenhead/backbone-on-express) application creation.
 
 To install these scaffolds, run:
 

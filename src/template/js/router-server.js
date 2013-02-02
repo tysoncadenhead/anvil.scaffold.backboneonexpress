@@ -6,11 +6,11 @@ define([
 	'backbone'
 ], function (_, Backbone) {
 
+	var crud = [];
+	
 	app.router = Backbone.Router.extend({
 
-		crud: [
-			
-		],
+		crud: crud,
 
 		routes: {
 			'': 'pages#home'
