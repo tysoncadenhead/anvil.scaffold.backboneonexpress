@@ -37,6 +37,11 @@ module.exports = function( _, anvil ) {
                 "package.json": anvil.scaffold.file( root + "json/package.json" ),
                 ".gitignore": anvil.scaffold.file( root + ".gitignore" ),
                 "test/.empty": anvil.scaffold.file( root + ".empty" ),
+                
+                "log":{
+                    "access.log": anvil.scaffold.file( root + "log.log" ),
+                    "error.log": anvil.scaffold.file( root + "log.log" )
+                },
 
                 "app": {
                     
